@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Jordan - The Legend</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    nav {
+      background: #222;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+
+    section {
+      margin: 20px 0;
+    }
+
+    .intro,
+    .nike {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .text,
+    .image {
+      flex: 1;
+      margin: 10px;
+    }
+
+    .text {
+      flex: 2;
+      padding-right: 20px;
+    }
+
+    .text h2 {
+      color: #111;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .text p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .image {
+      border-radius: 10px;
+      width: 100%;
+      height: 900px;
+      overflow: hidden;
+    }
+
+    .image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .jordan-shoes {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .shoe {
+      flex: 1;
+      margin: 10px;
+      padding: 10px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .shoe .photo {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .shoe .photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .shoe h3 {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+
+
+    .hero-section {
+      text-align: center;
+      background-color: #000;
+      background-image: url('public/images/jordan.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #f5f5f7;
+      height: 850px;
+    }
+
+    .timeline {
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .event {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline .event h2 {
+      color: #555;
+      font-size: 1.8rem;
+    }
+
+    .event p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 20px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+      /* 放大图片 */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      /* 添加阴影效果 */
+    }
+
+    .comparison {
+      display: flex;
+      justify-content: space-between;
+      margin: 50px auto;
+    }
+
+    .player {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 45%;
+    }
+
+    .player .img {
+      width: 100%;
+      height: 380px;
+      overflow-y: hidden;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .player img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #555;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .player p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Michael Jordan - The Legend & The Brand</h1>
+  </header>
+
+  <nav>
+    <a href="#legend">The Legend</a>
+    <a href="#nike">Failure & Abuse</a>
+    <a href="#nike">Change the World</a>
+    <a href="#shoes">Air Jordan Shoes</a>
+    <a href="#life">Life history</a>
+    <a href="#photo">Life photo</a>
+    <a href="#vs">Jordan vs James</a>
+  </nav>
+
+
+  <div class="container">
+    <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E4%B9%94%E4%B8%B9&step_word=&hs=0&pn=0&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=0&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=undefined&cs=2886275929%2C3510302307&os=1213702591%2C3522440570&simid=4089800311%2C571944481&adpicid=0&lpn=0&ln=1774&fr=&fmq=1729587296434_R&fm=&ic=undefined&s=undefined&hd=undefined&latest=undefined&copyright=undefined&se=&sme=&tab=0&width=undefined&height=undefined&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farchive%2F112634beac6558d1122ba485b1d9c968f8f0abb9.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Bktstktst_z%26e3Bv54AzdH3Fet1j5AzdH3FBV8Dw9y8d0Jw&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=9498081048856423158"
+      target="_blank">
+      <section class="hero-section" id="hero"> </section>
+    </a>
+    <!-- The Legend Section -->
+    <section id="legend" class="intro">
+      <div class="text">
+        <h2>Michael Jordan: The Greatest of All Time</h2>
+        <p>
+          Michael Jordan, born February 17, 1963, is regarded by many as the greatest basketball player of all
+          time. Known for his incredible athleticism, competitive spirit, and six NBA championships with the
+          Chicago Bulls, Jordan's influence on the game of basketball is unparalleled.
+        </p>
+        <p>
+          Jordan won several awards during his career, including five MVP titles and 14 NBA All-Star
+          selections. His highlight reel is full of unforgettable moments, from clutch shots to unqiue and unnbelievable
+          dunks. Beyond his playing career, he became an icon for his leadership, work ethic,
+          and marketability.
+        </p>
+      </div>
+      <div class="image">
+        <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E4%B9%94%E4%B8%B9&step_word=&hs=0&pn=8&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=0&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=undefined&cs=857886027%2C1802282261&os=3695446718%2C3376926322&simid=3394504603%2C309547649&adpicid=0&lpn=0&ln=1774&fr=&fmq=1729587406517_R&fm=&ic=undefined&s=undefined&hd=undefined&latest=undefined&copyright=undefined&se=&sme=&tab=0&width=undefined&height=undefined&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Finews.gtimg.com%2Fnews_bt%2FOB_ggK16LBaBeJrLaNVKoHJ49QxasTy-7AnG4wKVxszG0AA%2F641&fromurl=ippr_z2C%24qAzdH3FAzdH3Fgjo_z%26e3Bqq_z%26e3Bv54AzdH3F6wtgAzdH3FwAzdH3Fdad9an8bAabdd9aa&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=8006995160056961326"
+          target="_blank">
+          <img src="public/images/IMG_5313.jpg" alt="Michael Jordan in action">
+        </a>
+      </div>
+    </section>
+
+    <!-- Nike Partnership Section -->
+    <section id="nike" class="nike">
+      <div class="text">
+        <h2>Michael Jordan's Failure and Abuse</h2>
+        <p>
+          • Cut from his high school team.
+        </p> This is one of the most famous failed events about Jordan. He was cut from his high school basketball team.
+        This experience is cited as one of the moments that drove MJ to became success.
+        </p>• Early losses to the Detroit Pistons in the playoffs.
+        </p> Michael Joradn's early playoff losses to the Detroit Pistons (With stars like Isiah Thomas, Bill Laimbeer,
+        Dennis Rodman) are a significant part of his story. These losses came in the late 1980s when the Pistons, know
+        as the "Bad Boys" for thier palying style.This fail let the basketball fans to question whether can Michael
+        Jordan win the champion?
+        </p>• Gambling Issues
+        </p> Through out Michael Jordan's career, Jordan loves to gambling. During 1993 NBA playoffs, a book wrote by
+        Richard Esquinas told that Jordan owed over $1.2 million in gambling debt.
+        </p>• The murder of his father in 1993, leading to his first retirement from basketball.
+        </p> In 1993, jordan's father, James Jordan Sr., was murdered in an apparent carjacking. Father's death affected
+        Jordan and made Jordan chose to play baseball after leading the Bulls to win a championship.
+        </p>• Strained Personal Relationship
+        </p> Joradn's intense competitiveness often extended to his treatment of teammates. Once, Jordan punched
+        teammate - Steve Kerr during pratice. Although Kerr later recounted the incident as a turning point in thier
+        relationship and they respect each other, but the incident shows Jordan's intense, sometimes divisive approach
+        to leadership.
+        </p> Divorce and Family Impacts: Jordan's marriage to Juanita Vanoy ended in divorce in 2006 after 17 years. The
+        divorce settlements cost him more $150 million. While personal issues are common, the high-profile nature of his
+        life meant this was widely covered in the media.
+        </p>• Ownership Challenges with the Charlotte Hornets
+        </p> Jordan became the majority owner of the Charlotte Hornets (then Bobcats) in 2010. By his leading, the team
+        struggled, often ranking near the bottom of the league. The Bad choices in the draft and struggles with player
+        limited the development of the teams.
+
+
+        </p>
+      </div>
+      <div class="image">
+        <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E4%B9%94%E4%B8%B9&step_word=&hs=0&pn=37&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=0&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=undefined&cs=2963486312%2C3619617341&os=3092968138%2C1319501005&simid=4287223408%2C905482979&adpicid=0&lpn=0&ln=1774&fr=&fmq=1729587406517_R&fm=&ic=undefined&s=undefined&hd=undefined&latest=undefined&copyright=undefined&se=&sme=&tab=0&width=undefined&height=undefined&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fk.sinaimg.cn%2Fn%2Fsinakd10110%2F269%2Fw1019h850%2F20240508%2Fcda7-33422e5acbadfff388ecaa58fe7630b6.jpg%2Fw700d1q75cms.jpg%3Fby%3Dcms_fixed_width&fromurl=ippr_z2C%24qAzdH3FAzdH3Fh_z%26e3Bftgw_z%26e3Bv54_z%26e3BvgAzdH3Fw6ptvsj_nb9bdmc9ac_jccu1jk1aa8a8mrxd_z%26e3Bip4s&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=8006995160056961326"
+          target="_blank">
+          <img src="public/images/IMG_5314.jpg" alt="Nike Air Jordan">
+        </a>
+      </div>
+    </section>
+
+    <!-- Nike Partnership Section -->
+    <section id="nike" class="nike">
+      <div class="text">
+        <h2>Nike & Michael Jordan: A Legendary Partnership</h2>
+        <p>
+          In 1984, Jordan signed a deal with Nike that would forever change the landscape of sports marketing.
+          Air Jordan became a cultural phenomenon, it combines sporrts product with
+          street fashion. The Air Jordan sneakers were revolutionary in both design and technology, offering new fashion
+          styles and comfortable sports product.
+        </p>
+        <p>
+          In 1985, the first Air Jordan broke the mold of conventional basketball shoes. After that, the Air Jordan line
+          has become larger with more and more new and creative things.
+          Jordan's legacy lives on through this iconic brand, and helps more athletes to have thier own personal shoes.
+        </p>Players from Air Joradn:
+        <p></p>· Michael Jordan (Chicago Bulls)
+        <p></p>· Luka Dončić (Dallas Mavericks)
+        <p></p>· Jayson Tatum (Boston Celtics)
+        <p></p>· Zion Williamson (New Orleans Pelicans)
+        <p></p>· Dwyane Wade (NBA)
+        <p></p>· Russell Westbrook (Denver Nuggets)
+        <p></p>· Chris Paul (San Antonio Spurs)
+        <p></p>· Ray Allen (NBA)
+        <p></p>· Carmelo Anthony (NBA)
+        <p></p>· Derek Jeter (MLB)
+        </p>
+      </div>
+      <div class="image">
+        <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E4%B9%94%E4%B8%B9&step_word=&hs=0&pn=37&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=0&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=undefined&cs=2963486312%2C3619617341&os=3092968138%2C1319501005&simid=4287223408%2C905482979&adpicid=0&lpn=0&ln=1774&fr=&fmq=1729587406517_R&fm=&ic=undefined&s=undefined&hd=undefined&latest=undefined&copyright=undefined&se=&sme=&tab=0&width=undefined&height=undefined&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fk.sinaimg.cn%2Fn%2Fsinakd10110%2F269%2Fw1019h850%2F20240508%2Fcda7-33422e5acbadfff388ecaa58fe7630b6.jpg%2Fw700d1q75cms.jpg%3Fby%3Dcms_fixed_width&fromurl=ippr_z2C%24qAzdH3FAzdH3Fh_z%26e3Bftgw_z%26e3Bv54_z%26e3BvgAzdH3Fw6ptvsj_nb9bdmc9ac_jccu1jk1aa8a8mrxd_z%26e3Bip4s&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=8006995160056961326"
+          target="_blank">
+          <img src="public/images/IMG_5314.jpg" alt="Nike Air Jordan">
+        </a>
+      </div>
+    </section>
+
+    <!-- Nike Partnership Section -->
+    <section id="nike" class="nike">
+      <div class="text">
+        <h2>How does Michael Jordan change the world? </h2>
+        <p>Michael Jordan changed the world in many important ways:
+
+        </p>1. Making Basketball become Popular
+
+        </p>• Jordan's talent performance and exciting style of play helped basketball became popular around the world.
+        In his NBA Games and the Olympics,he can always attracts millions pf fans from all overe the world to watch his
+        games.
+
+        </p>2. Turning Athletes into Cultural Icons
+
+        </p>• Jordan showed that athletes could also be stars beyond sports. His movies like, Space Jam and TV
+        commercials made him became more popular. He opens the doors for athletes to be seen as entertainers and
+        influencers, that make them see by people other then sports fans.
+
+        </p>3. Setting New Standards for Endorsements
+
+        </p>• Nike help Michael Jordan to create the Air Jordan brand that changed the sports marketing. Air Jordans
+        became fashion icons, and Jordan's success let more players get the chance to have their own signature shoes.
+        Jordan's brand even march into football, and cooperat with many teams.
+
+        </p>4. Inspiring Hard Work and Dedication
+
+        </p>• Jordan's work ethic and competitive spirit inspired people all around the world. He is regarded as an idol
+        by many people. his behavior let his fans knows hardworking and the desire for success is the key of success.
+
+        </p>5. Being a Leader in Business and Philanthropy
+
+        </p>• As a team owner and businessman, Jordan shows that athletes can also have feedback and help the society,
+        like education and social justice, showing how a personal success helps the world.
+
+        </p>Through his influence in sports, business, and culture, Michael Jordan didn't just change basketball,he uses
+        basketball to inspired people around the world and set a standard for athletes.
+
+        </p>
+      </div>
+      <div class="image">
+        <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E4%B9%94%E4%B8%B9&step_word=&hs=0&pn=37&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=0&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=undefined&cs=2963486312%2C3619617341&os=3092968138%2C1319501005&simid=4287223408%2C905482979&adpicid=0&lpn=0&ln=1774&fr=&fmq=1729587406517_R&fm=&ic=undefined&s=undefined&hd=undefined&latest=undefined&copyright=undefined&se=&sme=&tab=0&width=undefined&height=undefined&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fk.sinaimg.cn%2Fn%2Fsinakd10110%2F269%2Fw1019h850%2F20240508%2Fcda7-33422e5acbadfff388ecaa58fe7630b6.jpg%2Fw700d1q75cms.jpg%3Fby%3Dcms_fixed_width&fromurl=ippr_z2C%24qAzdH3FAzdH3Fh_z%26e3Bftgw_z%26e3Bv54_z%26e3BvgAzdH3Fw6ptvsj_nb9bdmc9ac_jccu1jk1aa8a8mrxd_z%26e3Bip4s&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=8006995160056961326"
+          target="_blank">
+          <img src="public/images/IMG_5314.jpg" alt="Nike Air Jordan">
+        </a>
+      </div>
+    </section>
+
+    <!-- Air Jordan Shoes Section -->
+    <section id="shoes">
+      <h2>Air Jordan Shoes</h2>
+      <div class="jordan-shoes">
+        <div class="shoe">
+          <div class="photo">
+            <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=jordan1&step_word=&hs=0&pn=16&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=1650096222%2C3995574425&os=817671898%2C1385324070&simid=3403716756%2C102765391&adpicid=0&lpn=0&ln=1710&fr=&fmq=1729587467272_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fk.sinaimg.cn%2Fn%2Fsinakd20240507s%2F170%2Fw1080h690%2F20240507%2F7727-f0c8e63f87c01a132280cca99ea57177.jpg%2Fw700d1q75cms.jpg%3Fby%3Dcms_fixed_width&fromurl=ippr_z2C%24qAzdH3FAzdH3Fh_z%26e3Bftgw_z%26e3Bv54_z%26e3BvgAzdH3Fw6ptvsj_88clcdcbm0_9c8vucjka8la816dv_z%26e3Bip4s&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=9428015628172236407"
+              target="_blank">
+              <img src="public/images/jordan1.jpg" alt="Air Jordan 1">
+            </a>
+          </div>
+          <h3>Air Jordan 1</h3>
+          <p>
+            Released in 1985, the Air Jordan 1 was the original sneaker that started the Air Jordan legacy.
+            It defied NBA dress code rules and set new standards in basketball footwear.
+          </p>
+        </div>
+        <div class="shoe">
+          <div class="photo">
+            <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=jordan11&step_word=&hs=0&pn=515&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=3883970365%2C2342168260&os=3795231099%2C3156024028&simid=3883970365%2C2342168260&adpicid=0&lpn=0&ln=1653&fr=&fmq=1729587482186_R&fm=detail&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fwww2.flightclub.cn%2Fnews%2Fuploads%2Fallimg%2F150918%2F101I1C01-1_resized.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Bust2ipvs7k_z%26e3BvgAzdH3FgjofAzdH3FwAzdH3Ffgjwhj6AzdH3Fda8cAzdH3Fal8bAzdH3Fdmlmm_z%26e3Bip4s&gsm=1fe&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=9420333095631635405"
+              target="_blank">
+              <img src="public/images/jordan11.png" alt="Air Jordan 11">
+            </a>
+          </div>
+          <h3>Air Jordan 11</h3>
+          <p>
+            Known for its patent leather design, the Air Jordan 11 is considered one of the most iconic
+            sneakers of all time. Released in 1995, it was worn by Jordan during his return to the NBA.
+          </p>
+        </div>
+        <div class="shoe">
+          <div class="photo">
+            <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=jordan3&step_word=&hs=0&pn=203&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=1226429509%2C2721441581&os=3042251676%2C3107588030&simid=4273356229%2C798250561&adpicid=0&lpn=0&ln=1629&fr=&fmq=1729587551310_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fdunkhome-production.oss-cn-hangzhou.aliyuncs.com%2Fstatic_files%2F2019-07-06%2Fm-pzKoyRqy5HaSyCwM4__image_wh_840x555.jpeg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3B17ghi54j_z%26e3Bv54AzdH3FgjofAzdH3Fc0dc9&gsm=b4&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=8692180287859819721"
+              target="_blank">
+              <img src="public/images/jordan3.png" alt="Air Jordan 3">
+            </a>
+          </div>
+          <h3>Air Jordan 3</h3>
+          <p>
+            Designed by Tinker Hatfield, the Air Jordan 3 debuted in 1988 with the famous Jumpman logo and
+            an elephant print, becoming an instant classic both on and off the court.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline" id="life">
+      <h2 style="margin-bottom: -20px;">Timeline of His Life</h2>
+      <div class="event">
+        <h2>Birth</h2>
+        <p><strong>Date:</strong> February 17, 1963</p>
+        <p>Michael Jordan was born in Brooklyn, New York.</p>
+      </div>
+
+      <div class="event">
+        <h2>College Career</h2>
+        <p><strong>Date:</strong> 1981-1984</p>
+        <p>Jordan played basketball at the University of North Carolina, leading the team to a national
+          championship
+          in 1982.</p>
+      </div>
+
+      <div class="event">
+        <h2>NBA Debut</h2>
+        <p><strong>Date:</strong> October 26, 1984</p>
+        <p>Jordan made his NBA debut with the Chicago Bulls.</p>
+      </div>
+
+      <div class="event">
+        <h2>First NBA Championship</h2>
+        <p><strong>Date:</strong> June 12, 1991</p>
+        <p>Jordan won his first NBA championship with the Chicago Bulls, defeating the Los Angeles Lakers.</p>
+      </div>
+
+      <div class="event">
+        <h2>Retirement and Comebacks</h2>
+        <p><strong>First Retirement:</strong> October 6, 1993</p>
+        <p><strong>Comeback:</strong> March 18, 1995</p>
+        <p>Jordan retired three times in his career, but his first comeback in 1995 remains one of the most
+          famous.
+        </p>
+      </div>
+
+      <div class="event">
+        <h2>Final Retirement</h2>
+        <p><strong>Date:</strong> April 16, 2003</p>
+        <p>Jordan retired for the final time after playing two seasons with the Washington Wizards.</p>
+      </div>
+
+      <div class="event">
+        <h2>Legacy and Honors</h2>
+        <p><strong>Date:</strong> Post-2003</p>
+        <p>Jordan remains one of the greatest athletes of all time, with countless accolades and contributions
+          to
+          basketball.</p>
+      </div>
+    </section>
+
+    <div>
+      <h2>Family</h2>
+      <p>Jordan welcomed his youngest children, Victoria and Ysabel, with his second wife, Yvette Prieto, on February 9,
+        2014.
+        The couple met in 2013, and shortly after, they reportedly had a wedding estimated at $10 million.
+
+        Less than a year after their wedding, Jordan and Prieto welcomed their children. As a way of protecting them,
+        the twins
+        have been kept away from the public and lead a very private life, unlike their older half-siblings.</p>
+      <img
+        src="https://imgproxy.amomama.com/CBQF1DMUMTtT4dq2rX6uVDJJQN3VuggCgPCKjOEj2sI/rs:fill:768:0:1/g:no/aHR0cHM6Ly9jZG4uYW1vbWFtYS5jb20vZmJjZTE1ZGVmMzZiYTA0MmY1Y2RmM2JjYjA1ZWI5ZjMuanBnP3dpZHRoPTMwMjcmaGVpZ2h0PTMzNzU.jpg"
+        alt="family-relations" style="width: 500px;">
+    </div>
+
+    <section id="photo">
+      <h2>Life photo</h2>
+      <div class="gallery">
+        <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E4%B9%94%E4%B8%B9%E7%94%9F%E6%B4%BB%E7%85%A7&step_word=&hs=0&pn=59&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=3496993852%2C1601331190&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=1144612316%2C310556564&os=3496993852%2C1601331190&simid=1144612316%2C310556564&adpicid=0&lpn=0&ln=952&fr=&fmq=1729587953701_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fgimg2.baidu.com%2Fimage_search%2Fsrc%3Dhttp%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2Feaf667e6-fd92-4464-8638-79e8e4427dae%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg%26refer%3Dhttp%3A%2F%2Fsafe-img.xhscdn.com%26app%3D2002%26size%3Df9999%2C10000%26q%3Da80%26n%3D0%26g%3D0n%26fmt%3Dauto%3Fsec%3D1732180012%26t%3D8f5f59f4f875ea249cff1b1de2bb55f4&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3Bxtw5i5g2fi7_z%26e3Bv54AzdH3F1tfv5ej6yAzdH3Ftpj4AzdH3Fmdu1lkvjaaaaaaaa8kadna9k&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=9970543455139516409"
+          target="_blank">
+          <img src="public/images/3e91fac120a41d7fad8de717d7affad7.jpeg" alt="Photo 1">
+        </a>
+        <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E4%B9%94%E4%B8%B9%E7%94%9F%E6%B4%BB%E7%85%A7&step_word=&hs=0&pn=52&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=3210463037%2C2054342649&os=912415745%2C688191799&simid=3440111521%2C342554162&adpicid=0&lpn=0&ln=952&fr=&fmq=1729587953701_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180218%2Fe9e6058108d94944b21c9bfc4c596714.jpeg&fromurl=ippr_z2C%24qAzdH3FAzdH3F4p_z%26e3Bf5i7_z%26e3Bv54AzdH3Ffr56pfAzdH3FrAzdH3Fddn8caamd_0l8bmd&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=9970543455139516409"
+          target="_blank">
+          <img src="public/images/7d809b688f169c19ddaf807fdbd55b0f.jpeg" alt="Photo 2">
+        </a>
+        <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E4%B9%94%E4%B8%B9%E7%94%9F%E6%B4%BB%E7%85%A7&step_word=&hs=0&pn=61&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=2650819067%2C2165630462&os=3970135597%2C3730953400&simid=2650819067%2C2165630462&adpicid=0&lpn=0&ln=952&fr=&fmq=1729587953701_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%3A%2F%2Fdingyue.ws.126.net%2F2022%2F0111%2F356dc7f1j00r5i69p005kc000qf010mm.jpg%26thumbnail%3D660x2147483647%26quality%3D80%26type%3Djpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3B8mn_z%26e3Bv54AzdH3F1yAzdH3Fw6ptvsjAzdH3FGTDd9nVNacnbUVMK_z%26e3Bip4s&gsm=3c&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=9970543455139516409"
+          target="_blank">
+          <img src="public/images/9f3a0b1db2c80a2a04f9a4d394e908ef.jpeg" alt="Photo 3">
+        </a>
+        <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E4%B9%94%E4%B8%B9%E7%94%9F%E6%B4%BB%E7%85%A7&step_word=&hs=0&pn=44&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=2343831313%2C814085678&os=1722529354%2C693958093&simid=4287404981%2C698356062&adpicid=0&lpn=0&ln=952&fr=&fmq=1729587953701_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fimg31.mtime.cn%2Fpi%2F2015%2F02%2F07%2F124322.22328889_1000X1000.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3Frj5rsj_z%26e3B4pt4j_z%26e3Bv54AzdH3Flnlal8AzdH3Fri5p5_2wssj6yAzdH3F889mcdcAzdH3F&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=9970543455139516409"
+          target="_blank">
+          <img src="public/images/36d2a17b2720111304e3e68c539cd50f.jpg" alt="Photo 3">
+        </a>
+        <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E4%B9%94%E4%B8%B9%E7%94%9F%E6%B4%BB%E7%85%A7&step_word=&hs=0&pn=0&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=2929866207%2C1275688421&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=497951452%2C580254168&os=2929866207%2C1275688421&simid=497951452%2C580254168&adpicid=0&lpn=0&ln=952&fr=&fmq=1729587953701_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fp9-pc-sign.douyinpic.com%2Ftos-cn-i-0813c001%2FoUMDoAAKyDAyJbQaCMfhgdzHAbAeO6AIETNxNQ~tplv-dy-aweme-images%3Aq75.webp%3Fbiz_tag%3Daweme_images%26from%3D3213915784%26s%3DPackSourceEnum_AWEME_DETAIL%26sc%3Dimage%26se%3Dfalse%26x-expires%3D1699012800%26x-signature%3DNCv70VteJt7ECsTZj2Ebx1tghL8%3D&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3B157ytg_z%26e3Bv54AzdH3Fg5pjAzdH3F0dm08n08cn088n8d8ml&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=9970543455139516409"
+          target="_blank">
+          <img src="public/images/999b8ff4cadbd10522dff58cca4b2d69.jpeg" alt="Photo 3">
+        </a>
+      </div>
+    </section>
+
+    <section id="vs">
+      <h2 style="margin-bottom: -30px; margin-top: 50px;">Michael Jordan vs LeBron James</h2>
+      <div class="comparison">
+        <!-- Michael Jordan Section -->
+        <div class="player">
+          <div class="img">
+            <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E4%B9%94%E4%B8%B9&step_word=&hs=0&pn=39&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=3770156189%2C2161027819&os=1463750263%2C3715318899&simid=4214281221%2C721858168&adpicid=0&lpn=0&ln=1774&fr=&fmq=1729588117858_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Ft10.baidu.com%2Fit%2Fu%3D3916525405%2C229062578%26fm%3D30%26app%3D106%26f%3DJPEG%3Fw%3D640%26h%3D913%26s%3D2A8204C1C44346F4A23DE1BD03005012&fromurl=ippr_z2C%24qAzdH3FAzdH3Fkwt3twiw5_z%26e3Bkwt17_z%26e3Bv54AzdH3Ff%3Ft1%3D80ldclcd00lc9la8cc0%26ou6%3Dfrt1j6%26u56%3Drv&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=9034076551027898562"
+              target="_blank">
+              <img src="public/images/f42e9a5796c95c3f83921980667fed2d.jpeg" alt="LeBron James">
+            </a>
+          </div>
+          <h2>Michael Jordan</h2>
+          <p><strong>Position:</strong> Shooting Guard</p>
+          <p><strong>Height:</strong> 6'6" (198 cm)</p>
+          <p><strong>NBA Championships:</strong> 6</p>
+          <p><strong>NBA MVPs:</strong> 5</p>
+          <p><strong>Points per game:</strong> 30.1</p>
+        </div>
+
+        <!-- LeBron James Section -->
+        <div class="player">
+          <div class="img">
+            <a href="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E8%A9%B9%E5%A7%86%E6%96%AF&step_word=&hs=0&pn=6&spn=0&di=7410818322373017601&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=1115244122%2C606624059&os=3418836755%2C768822645&simid=3385335573%2C388706377&adpicid=0&lpn=0&ln=1667&fr=&fmq=1729588139696_R&fm=result&ic=&s=undefined&hd=&latest=&copyright=&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=https%3A%2F%2Fpic.rmb.bdstatic.com%2Fbjh%2F240312%2Fnews%2Faff8a46619bda2ec422d760347aedecb938.jpeg&fromurl=ippr_z2C%24qAzdH3FAzdH3Fkwt3twiw5_z%26e3Bkwt17_z%26e3Bv54AzdH3Ff%3Ft1%3D80l9mmma08nandb089m%26ou6%3Dfrt1j6%26u56%3Drv&gsm=1e&rpstart=0&rpnum=0&islist=&querylist=&nojc=undefined&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&lid=12545367270268627673"
+              target="_blank">
+              <img src="public/images/241622d4e68f2192f927621b9e6ba572.jpg" alt="Michael Jordan">
+            </a>
+          </div>
+          <h2>LeBron James</h2>
+          <p><strong>Position:</strong> Small Forward</p>
+          <p><strong>Height:</strong> 6'9" (206 cm)</p>
+          <p><strong>NBA Championships:</strong> 4</p>
+          <p><strong>NBA MVPs:</strong> 4</p>
+          <p><strong>Points per game:</strong> 27.2</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+  <footer>
+    <p>&copy; 2024 Jordan Legacy | Producer: Nicholas
+    </p>
+    <p>The above pictures are from <a
+        href="https://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&dyTabStr=MCwzLDEsMiwxMyw3LDYsNSwxMiw5&word=%E4%B9%94%E4%B8%B9"
+        target="_blank">www.baidu.com</a>
+    </p>
+  </footer>
+
+</body>
+
+</html>
